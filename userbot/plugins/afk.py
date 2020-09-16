@@ -146,9 +146,9 @@ async def on_afk(event):
                 afk_since = f"`{int(seconds)}s` **ago**"
         msg = None
         message_to_reply = f"`Hi! I am X-TraBot.`" + \
-            f"\n`My master is offline. Because, he is {reason}. So, leave your massage. When he comes online, he will reply to your message.😊`" \
+            f"\n`My master is offline. Because, he {reason}. So, leave your massage. When he comes online, he will reply to your message.😊`" \
             if reason \
-            else f"`Hi! I am X-TraBot.\nMy master is {reason}.\nSo, leave your massage. When he comes online, he will reply to your message.😊` "
+            else f"`Hi! I am X-TraBot.\nMy master {reason}.\nSo, leave your massage. When he comes online, he will reply to your message.😊` "
         msg = await event.reply(message_to_reply)
         await asyncio.sleep(5)
         if event.chat_id in last_afk_message:  # pylint:disable=E0602
